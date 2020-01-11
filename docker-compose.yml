@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  consoleapplication:
+    image: spalikhe/consoleapplication
+    build:
+      context: ./ConsoleApplication
+      #dockerfile: Dockerfile
+
+  dockercompose:
+    image: spalikhe/dockercompose
+    build:
+      context: ./DockerCompose
+      #dockerfile: Dockerfile
+
