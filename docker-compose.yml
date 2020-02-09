@@ -6,10 +6,25 @@ services:
     build:
       context: ./ConsoleApplication
       #dockerfile: Dockerfile
-
+    depends_on:
+        - privaterepo
+      
   dockercompose:
     image: spalikhe/dockercompose
     build:
       context: ./DockerCompose
       #dockerfile: Dockerfile
+    ports:
+        - "6500:6500"
+    
+    depends_on:
+        - privaterepo
+      
+
+
+  privaterepo:
+    image: spalikhe/privaterepo
+    build:
+      context: .
+      dockerfile: PrivateRepo/Dockerfile
 

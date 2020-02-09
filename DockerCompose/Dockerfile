@@ -12,6 +12,8 @@ WORKDIR /app/src/DockerCompose
 
 COPY . .
 
+RUN ls
+
 RUN dotnet build "DockerCompose.csproj" -c Release -o /app/build
 
 FROM build AS publish
